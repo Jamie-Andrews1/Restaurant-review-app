@@ -1,0 +1,121 @@
+.header {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  & .head {
+    text-align: center;
+    grid-column: 2/3;
+  }
+  & select {
+    grid-column: 3/3;
+    width: fit-content;
+  }
+}
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  width: clamp(350px 50% 400px);
+  & a {
+    color: #1f2937;
+    border-bottom: 2px solid currentColor;
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.ratingLabel {
+  color: #4b5563;
+  margin-right: 8px;
+}
+
+.stars {
+  display: flex;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+}
+
+.star.filled {
+  fill: #facc15;
+}
+
+.star.empty {
+  fill: #d1d5db;
+}
+
+.comment {
+  color: #374151;
+  margin-bottom: 16px;
+  text-wrap: pretty;
+}
+
+.commentLabel {
+  font-weight: 600;
+}
+
+.sentimentContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sentiment {
+  display: flex;
+  align-items: center;
+}
+
+.sentimentLabel {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.sentimentBadge {
+  margin-left: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+.POSITIVE {
+  background-color: hsl(142, 71%, 45%);
+}
+.NEGATIVE {
+  background-color: hsl(0, 71%, 45%);
+}
+.NEUTRAL {
+  background-color: #4b5563;
+}
+.score {
+  display: flex;
+  align-items: center;
+}
+
+.scoreLabel {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.scoreValue {
+  margin-left: 8px;
+  color: #374151;
+}

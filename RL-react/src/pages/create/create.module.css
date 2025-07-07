@@ -1,0 +1,21 @@
+.create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  & p {
+    width: fit-content;
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: min(80ch, 90%);
+  & > * {
+    margin-top: 2rem;
+  }
+  & button {
+    width: fit-content;
+  }
+}

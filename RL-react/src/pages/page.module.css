@@ -1,0 +1,26 @@
+.homeWrapper {
+  margin: 0 2rem;
+}
+.homeLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.home {
+  padding-top: 4rem;
+  display: grid;
+  margin: 0 2rem;
+  grid: auto/ repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+}
+.restu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-wrap: balance;
+  align-items: center;
+  margin-bottom: 1rem;
+  & img {
+    max-height: 400px;
+  }
+}

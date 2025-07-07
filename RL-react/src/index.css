@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+25&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  font-family: "PT serif", comic-sans, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --foreground: hsl(208, 37%, 20%);
+  --background: hsl(55, 55%, 95%);
+  --btnBg: hsla(0, 6%, 3%, 0.15);
+  --borderBtn: hsl(237, 100%, 10%);
+  --delBtn: hsl(0, 100%, 60%);
+  --form-bg: hsla(210, 57%, 78%, 0.5);
+
+  color-scheme: dark light;
+  color: var(--foreground);
+  background: var(--background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="dark"] {
+  --foreground: hsla(0, 0%, 100%, 0.562);
+  --background: #602860;
+  background: radial-gradient(
+    circle,
+    rgba(96, 40, 96, 1) 0%,
+    rgba(18, 18, 18, 1) 65%
+  );
+
+  --form-bg: hsla(0, 6%, 20%, 0.15);
+  --btnBg: hsl(0, 0%, 20%);
+  --borderBtn: hsl(237, 100%, 70%);
+  --delBtn: hsl(0, 100%, 27%);
+}
+* {
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: currentColor;
+  width: fit-content;
+  text-decoration: inherit;
+  transition: all 500ms ease;
+}
+a:hover {
+  opacity: 0.5;
+}
+select {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  height: fit-content;
+  font-weight: 500;
+}
+input {
+  line-height: 2rem;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+Form {
+  padding: 3rem;
+  background: var(--form-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.7px);
+  -webkit-backdrop-filter: blur(2.7px);
+  border: 1px solid hsla(0, 6%, 3%, 0.3);
+}
+
+label:has(+ input:user-valid)::after {
+  margin-left: 1rem;
+  content: "✅";
+  color: green;
+}
+
+label:has(+ :user-invalid)::after {
+  margin-left: 1rem;
+  content: "❌";
+  color: red;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--btnBg);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: var(--borderBtn);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

@@ -1,0 +1,12 @@
+.reviews {
+  margin: 3rem;
+  display: grid;
+  place-items: center;
+  gap: 3rem;
+  grid: auto / repeat(auto-fit, minmax(300px, 1fr));
+}
+@media (width < 500px) {
+  .reviews {
+    margin: 1rem;
+  }
+}

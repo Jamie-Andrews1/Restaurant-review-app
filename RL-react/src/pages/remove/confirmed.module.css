@@ -1,0 +1,19 @@
+.confirm {
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  margin-inline: auto;
+  max-width: 90%;
+  & h2:first-of-type + h2 {
+    width: fit-content;
+    border-bottom: 3px solid currentColor;
+  }
+  & Form {
+    all: unset;
+  }
+  .delBtn {
+    background-color: var(--delBtn);
+  }
+}
