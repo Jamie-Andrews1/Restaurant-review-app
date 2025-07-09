@@ -10,7 +10,7 @@ Open a Terminal:
 
 Run:
 <pre>
-<code>git clone Jamie-Andrews1/Restaurant-review-app
+<code>git clone https://github.com/Jamie-Andrews1/Restaurant-review-app.git
 cd Restaurant-review-app</code>
 </pre>
 
