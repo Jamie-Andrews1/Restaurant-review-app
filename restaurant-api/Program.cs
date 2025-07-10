@@ -400,9 +400,15 @@ async Task<SentimentResult> AnalyzeComment(string comment)
     try
     {
         process.Start();
-        var output = await process.StandardOutput.ReadToEndAsync();
-        var error = await process.StandardError.ReadToEndAsync();
+        string output = await process.StandardOutput.ReadToEndAsync();
+        string error = await process.StandardError.ReadToEndAsync();
         await process.WaitForExitAsync();
+
+        if (!string.IsNullOrWhiteSpace(error))
+            Console.Error.WriteLine("Python STDERR: " + error);
+
+        if (string.IsNullOrWhiteSpace(output))
+            throw new Exception("Python produced no output");
 
         var sentimentResults = JsonSerializer.Deserialize<List<SentimentResult>>(output, new JsonSerializerOptions
         {
