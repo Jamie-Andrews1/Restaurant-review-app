@@ -29,6 +29,18 @@ Rather than a monolithic approach, the backend bridges two ecosystems:
 *   **ASP.NET Core** provides the high-performance API and Entity Framework Core layer.
 *   **Python Integration:** Sentiment analysis is performed by a Python script invoked by the .NET backend to provide real-time scoring of user reviews (Positive/Neutral/Negative).
 
+🌟 Key Features
+Polyglot AI Orchestration: Integrates a Python sentiment analysis engine directly into the .NET request pipeline. It uses System.Diagnostics.Process to execute NLP scripts, passing data via serialized JSON temporary files for high reliability.
+
+Intelligent Leaderboard Engine: Implements a dual-database strategy:
+
+PostgreSQL: Primary persistent storage for restaurant and review data.
+
+In-Memory DB: A high-speed leaderboard cache that stores computed averages for ratings and sentiment scores, recalculated on-demand to ensure the UI remains responsive.
+
+On-the-Fly Image Optimization: Uses SixLabors.ImageSharp to process user-uploaded restaurant photos. Images are automatically resized to an 800px width constraint and saved with randomized filenames to prevent collision and optimize storage.
+
+Entity Framework Core Integration: Utilizes Eager Loading (.Include()) and No-Tracking queries (.AsNoTracking()) to balance data richness with query performance.
 ### 🔒 Secure Infrastructure
 *   **Private Networking:** All services communicate over a dedicated bridge network (`app-network`), exposing only the Caddy server to the outside world.
 *   **Environment Injection:** Database credentials and sensitive strings are managed via `${VARIABLES}` in the compose file for security and portability.
