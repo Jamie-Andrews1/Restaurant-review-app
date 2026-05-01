@@ -49,14 +49,13 @@ Entity Framework Core Integration: Utilizes Eager Loading (.Include()) and No-Tr
 
 ## 🛠️ Project Structure
 ```text
-├── restaurant-api/         # ASP.NET Core Source Code
-│   ├── Dockerfile.Backend  # Multi-stage build for API
-│   └── scripts/            # Python Sentiment Analysis scripts
-├── src/                    # React Frontend Source Code
-├── Dockerfile              # Frontend build + Caddy configuration
-├── Dockerfile.migration    # Specialized EF Core migration runner
-├── Caddyfile               # Caddy reverse proxy & routing rules
-└── docker-compose.yml      # Service orchestration
+├── RL-react/               # Frontend: React.js SPA
+├── restaurant-api/         # Backend: ASP.NET Core Minimal API & Python AI
+├── Caddyfile               # Production Web Server & Reverse Proxy config
+├── Dockerfile              # Multi-stage build for the Frontend + Caddy
+├── Dockerfile.migration    # Ephemeral container for EF Core DB Migrations
+├── docker-compose.yml      # Service Orchestration
+└── README.md               # Documentation
 ```
 
 ## 🚦 Run in a container
